@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		87718CC8234EA5080083EFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87718CC7234EA5080083EFCC /* AppDelegate.swift */; };
 		87718CCA234EA5080083EFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87718CC9234EA5080083EFCC /* SceneDelegate.swift */; };
-		87718CCC234EA5080083EFCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87718CCB234EA5080083EFCC /* ViewController.swift */; };
 		87718CCF234EA5080083EFCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87718CCD234EA5080083EFCC /* Main.storyboard */; };
 		87718CD1234EA50A0083EFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87718CD0234EA50A0083EFCC /* Assets.xcassets */; };
 		87718CD4234EA50A0083EFCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87718CD2234EA50A0083EFCC /* LaunchScreen.storyboard */; };
+		87718CFD235014180083EFCC /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87718CFC235014180083EFCC /* MenuTVC.swift */; };
+		87718CFF23501FBF0083EFCC /* HomeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87718CFE23501FBF0083EFCC /* HomeTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		87718CC4234EA5080083EFCC /* TwitterMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87718CC7234EA5080083EFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87718CC9234EA5080083EFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		87718CCB234EA5080083EFCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87718CCE234EA5080083EFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87718CD0234EA50A0083EFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87718CD3234EA50A0083EFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87718CD5234EA50A0083EFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87718CFC235014180083EFCC /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
+		87718CFE23501FBF0083EFCC /* HomeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		87718CC6234EA5080083EFCC /* TwitterMenu */ = {
 			isa = PBXGroup;
 			children = (
+				87718CFB235013E90083EFCC /* Controllers */,
 				87718CC7234EA5080083EFCC /* AppDelegate.swift */,
 				87718CC9234EA5080083EFCC /* SceneDelegate.swift */,
-				87718CCB234EA5080083EFCC /* ViewController.swift */,
 				87718CCD234EA5080083EFCC /* Main.storyboard */,
 				87718CD0234EA50A0083EFCC /* Assets.xcassets */,
 				87718CD2234EA50A0083EFCC /* LaunchScreen.storyboard */,
 				87718CD5234EA50A0083EFCC /* Info.plist */,
 			);
 			path = TwitterMenu;
+			sourceTree = "<group>";
+		};
+		87718CFB235013E90083EFCC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				87718CFC235014180083EFCC /* MenuTVC.swift */,
+				87718CFE23501FBF0083EFCC /* HomeTVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87718CCC234EA5080083EFCC /* ViewController.swift in Sources */,
 				87718CC8234EA5080083EFCC /* AppDelegate.swift in Sources */,
+				87718CFD235014180083EFCC /* MenuTVC.swift in Sources */,
+				87718CFF23501FBF0083EFCC /* HomeTVC.swift in Sources */,
 				87718CCA234EA5080083EFCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
