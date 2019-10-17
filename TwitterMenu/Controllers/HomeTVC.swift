@@ -14,6 +14,12 @@ class HomeTVC: UITableViewController {
     fileprivate let menuWidth:CGFloat = 300
     fileprivate var isMenuOpen = false
     fileprivate let velocityThreshold: CGFloat = 500
+    fileprivate let darkCover = UIView()
+    
+    fileprivate func setupPanGesture() {
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        self.view.addGestureRecognizer(panGesture)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +32,18 @@ class HomeTVC: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(handleHide))
         
         setupMenuController()
+        setupPanGesture()
+        setupDarkCoverView()
+    }
+    
+    fileprivate func setupDarkCoverView() {
+        darkCover.alpha = 0
+        darkCover.backgroundColor = UIColor(white: 0, alpha: 0.8)
+        darkCover.isUserInteractionEnabled = false
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        self.view.addGestureRecognizer(panGesture)
+        let menuView = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        menuView?.addSubview(darkCover)
+        darkCover.frame = menuView?.frame ?? .zero
     }
     
     @objc func handlePan(gesture: UIPanGestureRecognizer) {
@@ -48,6 +63,8 @@ class HomeTVC: UITableViewController {
             
             self.menuTVC.view.transform = tranform
             self.navigationController?.view.transform = tranform
+            self.darkCover.transform = tranform
+            self.darkCover.alpha = x / menuWidth
         } else if gesture.state == .ended {
             handlePanGestureEnded(gesturePosition: translation.x, gestureVelcoity: gesture.velocity(in: self.view).x)
         }
@@ -108,6 +125,8 @@ class HomeTVC: UITableViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.menuTVC.view.transform = transform
             self.navigationController?.view.transform = transform
+            self.darkCover.transform = transform
+            self.darkCover.alpha = transform == .identity ? 0 : 1
         })
     }
     
